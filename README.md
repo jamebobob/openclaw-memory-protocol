@@ -54,6 +54,8 @@ The three real-time checkpoints (60%, 75%, 80%) ensure data reaches disk before 
 | memory/observations.md | Extracted insights | Observer cron (writes), Agent (prunes). Dual ownership by design. |
 | MEMORY.md | Curated long-term state | Nightly curation cron + Agent |
 
+**Note:** The observer cron that writes `observations.md` is deployment-specific and not included in this repo. The three nightly crons and the consolidation rules work without it. If you don't run an observer cron, the `observations.md` thresholds in the consolidation rules are harmless but inactive.
+
 ---
 
 ## Consolidation Protocol (Manual Rules)
@@ -149,12 +151,12 @@ Checks:
 
 1. SESSION-STATE.md freshness (flag if > 24 hours stale)
 2. observations.md line count (flag if > 100)
-3. Daily transcript existence
+3. Daily log existence
 4. OpenClaw cron error status
 5. Stale files in memory/ (> 7 days unmodified)
 6. MEMORY.md currency (flag if > 3 days since last dated entry)
 7. **working-buffer.md non-empty** (contents should have been processed)
-8. **Bootstrap file sizes** (flag if any file > 18K chars or total > 140K chars)
+8. **Bootstrap file sizes** (flag if any file > 18K chars or total > 135K chars)
 
 Items 7 and 8 are the ones nobody else monitors. Item 7 catches orphaned buffer contents from crashed sessions. Item 8 catches silent bootstrap truncation before it starts eating your memory (see [Bootstrap Truncation](#bootstrap-truncation)).
 
