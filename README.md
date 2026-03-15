@@ -4,6 +4,8 @@ A layered memory persistence protocol for OpenClaw agents. Prevents context loss
 
 Built after losing context to compaction one too many times. The core architecture (significance tagging, working buffer, consolidation rules) came from researching how human brains handle memory consolidation and forgetting, then adapting those patterns to an agent that wakes up fresh every session. Audited by multiple AI systems. Stress-tested across 6+ compactions in a single session with zero data loss.
 
+Complements [openclaw-agent-privacy](https://github.com/jamebobob/openclaw-agent-privacy) by ensuring the agent's file-based memory survives compaction. The privacy framework handles which memories each agent can access; this protocol handles making sure the memories exist in the first place.
+
 ## Why This Exists
 
 OpenClaw's built-in `memoryFlush` is your agent's only safety net before compaction. It has three failure modes:
