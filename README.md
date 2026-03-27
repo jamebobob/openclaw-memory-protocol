@@ -282,7 +282,7 @@ Keep `~/.openclaw/openclaw.json`, credentials, and session transcripts out of gi
 
 ## Credits
 
-Developed by [jamebobob](https://github.com/jamebobob). Core architecture designed by Eve (consolidation protocol, significance tagging, working buffer lifecycle, failure-safe cron ordering, pre-compaction protocol). Audited and hardened by Claude (24-hour immunity rule, bootstrap truncation monitoring, memoryFlush math correction).
+Developed by [@jamebobob](https://github.com/jamebobob). Core architecture designed by the live agent (consolidation protocol, significance tagging, working buffer lifecycle, failure-safe cron ordering, pre-compaction protocol). Audited and hardened by Claude (24-hour immunity rule, bootstrap truncation monitoring, memoryFlush math correction).
 
 Significance tagging and the consolidation/forgetting model draw from memory consolidation neuroscience research. The protocol treats agent memory the way brains treat sleep: tag what matters, replay it, promote the meaning, forget the noise.
 
