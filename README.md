@@ -1,3 +1,5 @@
+> **Archived April 2026.** Built on [OpenClaw](https://github.com/openclaw/openclaw) and moved off of it when the active work migrated to [Hermes](https://github.com/hermes-agent/hermes-agent). The design ideas in this repo might still be useful. The platform wiring is obsolete.
+
 # openclaw-memory-protocol
 
 A layered memory persistence protocol for OpenClaw agents. Prevents context loss during compaction, automates nightly memory maintenance, and catches silent failures before they eat your data.
